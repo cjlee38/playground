@@ -1,0 +1,8 @@
+spring:
+  sql:
+    init:
+      platform: no
+  datasource:
+    url: jdbc:mysql://localhost:53306/playground
+    username: root
+    password: root
