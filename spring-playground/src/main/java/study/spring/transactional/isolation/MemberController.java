@@ -13,17 +13,17 @@ public class MemberController {
     }
 
     @GetMapping("/uncommitted")
-    public void run() {
+    public void uncommitted() {
         memberService.uncommiited();
     }
 
     @GetMapping("/no-transaction")
-    public void run2() {
+    public void noTransaction() {
         memberService.noTransaction();
     }
 
     @GetMapping("/repeatable-read")
-    public void run3() {
+    public void repeatableRead() {
         memberService.repeatableRead();
     }
 }

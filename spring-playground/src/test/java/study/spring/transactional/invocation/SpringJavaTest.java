@@ -1,8 +1,5 @@
 package study.spring.transactional.invocation;
 
-import static org.assertj.core.api.Assertions.*;
-
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,10 +23,6 @@ class SpringJavaTest {
 
     @Test
     void aa() {
-        // given
         springJava.nonTransactionalCaller();
-        // when
-
-        // then
     }
 }
