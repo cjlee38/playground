@@ -3,6 +3,8 @@ logging:
     org:
       springframework:
         transaction.interceptor: TRACE
+      hibernate.type.descriptor.sql: trace
+
 spring:
   task:
     execution:
@@ -32,3 +34,4 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+
