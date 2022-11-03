@@ -1,2 +1,7 @@
-package study.spring.event;public class TransactionalMemberService {
+package study.spring.event;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class TransactionalMemberService {
 }

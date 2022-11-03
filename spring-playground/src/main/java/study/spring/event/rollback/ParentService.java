@@ -7,14 +7,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class Parent {
+public class ParentService {
 
     private final ApplicationEventPublisher eventPublisher;
     private final RollbackMemberRepository rollbackMemberRepository;
 
     @Transactional
-    public void publish() {
-        RollbackMember member = new RollbackMember(null, "name");
+    public void doService(String name) {
+        RollbackMember member = new RollbackMember(null, name);
         rollbackMemberRepository.save(member);
         eventPublisher.publishEvent(new MemberEnrollEvent(member.getId()));
     }

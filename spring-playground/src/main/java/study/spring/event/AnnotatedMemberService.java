@@ -1,4 +1,4 @@
-package study.spring.event.annotation;
+package study.spring.event;
 
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.event.EventListener;
@@ -10,30 +10,15 @@ import study.spring.setups.Member;
 @Service
 public class AnnotatedMemberService {
 
-    private final AnnotatedMemberRepository annotatedMemberRepository;
     private ApplicationEventPublisher applicationEventPublisher;
 
-    public AnnotatedMemberService(
-            AnnotatedMemberRepository annotatedMemberRepository,
-            ApplicationEventPublisher applicationEventPublisher
-    ) {
-        this.annotatedMemberRepository = annotatedMemberRepository;
+    public AnnotatedMemberService(ApplicationEventPublisher applicationEventPublisher) {
         this.applicationEventPublisher = applicationEventPublisher;
     }
 
     public void enroll(Member member) {
-        annotatedMemberRepository.save(member);
-
-        AnnotatedMailSendService.AnnotatedMemberEnrollmentEvent event = new AnnotatedMailSendService.AnnotatedMemberEnrollmentEvent(member.getName());
+        AnnotatedMemberEnrollmentEvent event = new AnnotatedMemberEnrollmentEvent(member.getName());
         applicationEventPublisher.publishEvent(event);
-    }
-}
-
-@Repository
-class AnnotatedMemberRepository {
-
-    public void save(Member member) {
-
     }
 }
 
@@ -56,6 +41,4 @@ class AnnotatedMailSendService {
     public void sendMail(AnnotatedMemberEnrollmentEvent event) {
         System.out.println("event = " + event.getContent());
     }
-
-
 }

@@ -1,22 +1,16 @@
-package study.spring.event.before42;
+package study.spring.event;
 
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.context.ApplicationListener;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import study.spring.setups.Member;
 
 @Service
 public class OldMemberService implements ApplicationEventPublisherAware {
 
-    private final OldMemberRepository oldMemberRepository;
     private ApplicationEventPublisher applicationEventPublisher;
-
-    public OldMemberService(OldMemberRepository oldMemberRepository) {
-        this.oldMemberRepository = oldMemberRepository;
-    }
 
     @Override
     public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
@@ -24,18 +18,8 @@ public class OldMemberService implements ApplicationEventPublisherAware {
     }
 
     public void enroll(Member member) {
-        oldMemberRepository.save(member);
-
         OldMemberEnrollmentEvent oldMemberEnrollmentEvent = new OldMemberEnrollmentEvent(this, member.getName());
         applicationEventPublisher.publishEvent(oldMemberEnrollmentEvent);
-    }
-}
-
-@Repository
-class OldMemberRepository {
-
-    public void save(Member member) {
-
     }
 }
 
