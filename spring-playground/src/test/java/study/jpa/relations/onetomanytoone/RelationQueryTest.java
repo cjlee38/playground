@@ -1,4 +1,4 @@
-package study.spring.jpa.relations.onetomanytoone;
+package study.jpa.relations.onetomanytoone;
 
 import java.util.List;
 import java.util.Set;

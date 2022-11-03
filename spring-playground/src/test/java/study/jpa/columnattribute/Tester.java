@@ -1,4 +1,4 @@
-package study.spring.jpa.columnattribute;
+package study.jpa.columnattribute;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package study.spring.jpa.relations.onetomanyUni;
+package study.jpa.relations.onetomanyUni;
 
 import java.util.ArrayList;
 import java.util.List;
