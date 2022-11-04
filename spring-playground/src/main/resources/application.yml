@@ -12,7 +12,9 @@ spring:
         core-size: 8
         max-size: 8
   datasource:
-#    url: jdbc:mysql://localhost:53306/playground
+    hikari:
+      auto-commit: false
+    #    url: jdbc:mysql://localhost:53306/playground
 #    username: root
 #    password: root
     url: jdbc:h2:mem:test;MODE=MYSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
@@ -22,6 +24,8 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        connection:
+          provider_disables_autocommit: true
     hibernate:
       ddl-auto: create
     open-in-view: false
