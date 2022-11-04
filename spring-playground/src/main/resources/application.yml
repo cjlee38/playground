@@ -26,6 +26,7 @@ spring:
         format_sql: true
         connection:
           provider_disables_autocommit: true
+        default_batch_fetch_size: 70
     hibernate:
       ddl-auto: create
     open-in-view: false
