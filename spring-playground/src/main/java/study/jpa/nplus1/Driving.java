@@ -13,6 +13,9 @@ import javax.persistence.OneToMany;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.BatchSize;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.FetchProfile;
 
 @Entity
@@ -27,5 +30,12 @@ public class Driving {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "driving_id", nullable = false, updatable = false)
+//    @Fetch(FetchMode.SUBSELECT)
+//    @BatchSize()
+    /*
+    batch fetch size 관련
+    https://www.inflearn.com/questions/34469
+    https://americanopeople.tistory.com/377
+     */
     private List<BatchFetchMode> modes = new ArrayList<>();
 }
