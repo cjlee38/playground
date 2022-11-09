@@ -28,14 +28,17 @@ public class Driving {
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "driving_id", nullable = false, updatable = false)
-//    @Fetch(FetchMode.SUBSELECT)
-//    @BatchSize()
     /*
     batch fetch size 관련
     https://www.inflearn.com/questions/34469
     https://americanopeople.tistory.com/377
+
+    관련 버그
+    https://yjksw.github.io/jpa-default-batch-fetch-size-not-working/
      */
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "driving_id", nullable = false, updatable = false)
+//    @Fetch(FetchMode.SUBSELECT)
+//    @BatchSize()
     private List<BatchFetchMode> modes = new ArrayList<>();
 }
