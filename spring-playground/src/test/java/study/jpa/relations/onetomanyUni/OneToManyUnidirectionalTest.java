@@ -100,9 +100,9 @@ public class OneToManyUnidirectionalTest {
         System.out.println("==========================");
 
         Team team1 = entityManager.find(Team.class, team.getId());
-//        Member findMember = entityManager.find(Member.class, member.id);
+//        MemberRoot findMember = entityManager.find(MemberRoot.class, member.id);
         Member findMember = team1.getMembers().remove(0);
-//        Member findMember = team1.getMembers().get(0);
+//        MemberRoot findMember = team1.getMembers().get(0);
         Team team22 = entityManager.find(Team.class, team2.getId());
         //team22.getMembers().add(findMember);
 
