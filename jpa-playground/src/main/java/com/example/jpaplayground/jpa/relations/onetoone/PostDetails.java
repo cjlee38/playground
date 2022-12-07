@@ -1,5 +1,6 @@
 package com.example.jpaplayground.jpa.relations.onetoone;
 
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -17,19 +18,7 @@ import org.hibernate.annotations.LazyToOneOption;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-class Post {
-
-    @Id
-    private Long id;
-
-    private String title;
-}
-
-@Entity
-@Getter
-@NoArgsConstructor
-@AllArgsConstructor
-class PostDetails {
+public class PostDetails {
 
     @Id
     @GeneratedValue

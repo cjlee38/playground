@@ -8,19 +8,21 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 @SpringBootTest
-//@EnableJpaRepositories
 public class LazyLoadingTest {
 
-    @Autowired private PostRepository postRepository;
-    @Autowired private PostDetailRepository postDetailRepository;
-    @Autowired private EntityManager entityManager;
+    @Autowired
+    private PostRepository postRepository;
+    @Autowired
+    private PostDetailRepository postDetailRepository;
+    @Autowired
+    private EntityManager entityManager;
 
     @Test
     @Transactional
     @DisplayName("@LazyToOne(LazyToOneOption.FALSE) 인 경우 의도치않게 쿼리가 두번 나간다. postdetails -> post"
             + "@LazyToOne(LazyToOneOption.PROXY) 인 경우, postdetails에 대한 쿼리만 나간다. getPost를 땡기면 그때 가져온다"
             + "@LazyToOne(LazyToOneOption.NO_PROXY) 인 경우도 마찬가지로 getPost를 땡기면 그때 가져온다.")
-    // 그렇다면, PROXY와 NO_PROXY의 차이는 무엇일까 ?
+        // 그렇다면, PROXY와 NO_PROXY의 차이는 무엇일까 ?
     void asdasdx() {
         // given
         Post post = new Post(10L, "the post");
