@@ -1,7 +1,7 @@
 
 # IO 작업이 없는 상황에서 멀티스레드가 빠른 동작을 보장할까 ?
 
-[테스트 코드](../spring-playground/src/main/java/study/java/mutlithread/WhichIsFasterWithoutIO.java)
+[테스트 코드](../java-playground/src/main/java/study/java/mutlithread/WhichIsFasterWithoutIO.java)
 
 ## 예상 
 - 스레드는 IO 작업이 없다면 block 되지 않기 때문에 항상 running 상태일 것이다.(not ready or sleep)

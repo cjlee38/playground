@@ -11,9 +11,7 @@ public class WhichIsFasterWithoutIO {
     private static final Logger logger = LoggerFactory.getLogger(WhichIsFasterWithoutIO.class);
 
     public static void main(String[] args) throws InterruptedException {
-
         WhichIsFasterWithoutIO object = new WhichIsFasterWithoutIO();
-
         int size = 10_000_000;
         int iterateCount = 10;
         object.runSingle(size, iterateCount);
