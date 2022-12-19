@@ -40,3 +40,8 @@ spring:
       prefix: /WEB-INF/views/
       suffix: .jsp
 
+log4j:
+  logger:
+    org:
+      springframework:
+        cglib: DEBUG
