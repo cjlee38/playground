@@ -1,38 +1,38 @@
 package study.java.concurrency;
 
+import java.lang.Thread.State;
+
 public class Main {
-//    public static void main(String[] args) throws InterruptedException {
-//        Foo foo = new Foo();
-//        int threadCount = 10;
-//        Runnable runnable = () -> {
-//            for (int i = 0; i < 100; i++) {
-//                foo.add();
-//            }
-//        };
-//
-//        Thread[] threads = createThreads(threadCount, runnable);
-//        for (Thread thread : threads) {
-//            thread.start();
-//        }
-//        for (Thread thread : threads) {
-//            thread.join();
-//        }
-//        System.out.println("foo.bar = " + foo.bar);
-//    }
-//
-//    private static Thread[] createThreads(int threadCount, Runnable runnable) {
-//        Thread[] threads = new Thread[10];
-//        for (int i = 0; i < 10; i++) {
-//            threads[i] = new Thread(runnable);
-//        }
-//        return threads;
-//    }
+    public static void main(String[] args) throws InterruptedException {
+        Foo foo = new Foo();
+
+        Thread threadA = new Thread(() -> foo.add());
+        Thread threadB = new Thread(() -> foo.add());
+
+        threadA.start();
+        threadB.start();
+
+        while (true) {
+            State stateA = threadA.getState();
+            State stateB = threadB.getState();
+            System.out.println("stateA = " + stateA);
+            System.out.println("stateB = " + stateB);
+            System.out.println("======================");
+            if (stateA == State.TERMINATED && stateB == State.TERMINATED) break;
+        }
+
+        System.out.println(foo.bar);
+    }
 
     private static class Foo {
         private int bar = 0;
 
         public void add() {
-            bar++;
+            synchronized (this) {
+                System.out.println("increaseed by " + Thread.currentThread().getName());
+                bar++;
+                notifyAll();
+            }
         }
     }
 }
