@@ -15,13 +15,6 @@ public class DomainEntityController {
 
     @PatchMapping("/domainentity")
     public ResponseEntity<DomainEntity> hello(@RequestBody PurchaseRequest request) {
-        return ResponseEntity.ok(domainEntityService.purchase(request.id, request.amount));
-    }
-
-    @RequiredArgsConstructor
-    @Getter
-    static class PurchaseRequest {
-        private final Long id;
-        private final Long amount;
+        return ResponseEntity.ok(domainEntityService.purchase(request.getId(), request.getAmount()));
     }
 }
