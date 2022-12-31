@@ -1,4 +1,4 @@
-package com.example.concurrencyplayground.app.facade;
+package com.example.concurrencyplayground.facade;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

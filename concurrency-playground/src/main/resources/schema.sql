@@ -1,6 +1,8 @@
+drop table if exists domain_entity;
+
 create table domain_entity
 (
-    id        bigint primary key,
+    id        bigint,
     item_name varchar(255),
     quantity  bigint,
     primary key (id)

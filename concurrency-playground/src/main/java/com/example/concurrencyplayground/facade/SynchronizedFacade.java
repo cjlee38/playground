@@ -1,4 +1,4 @@
-package com.example.concurrencyplayground.app.facade;
+package com.example.concurrencyplayground.facade;
 
 import com.example.concurrencyplayground.app.entity.DomainEntity;
 import com.example.concurrencyplayground.app.entity.DomainEntityService;
