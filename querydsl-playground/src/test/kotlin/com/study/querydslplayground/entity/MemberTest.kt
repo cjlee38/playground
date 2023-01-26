@@ -11,11 +11,9 @@ import javax.persistence.EntityManager
 @SpringBootTest
 @Transactional
 class MemberTest {
-
-    lateinit var testEntityManager: TestEntityManager
-
     @Autowired
     lateinit var entityManager: EntityManager
+    lateinit var testEntityManager: TestEntityManager
 
     @BeforeEach
     fun setUp() {
