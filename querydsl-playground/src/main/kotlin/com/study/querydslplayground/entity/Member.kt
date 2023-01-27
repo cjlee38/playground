@@ -9,7 +9,7 @@ class Member(
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "team_id")
-    var team: Team,
+    var team: Team?,
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
