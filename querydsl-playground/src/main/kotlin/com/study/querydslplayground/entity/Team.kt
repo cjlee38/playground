@@ -18,6 +18,6 @@ class Team(
     val id: Long = 0L
 ) {
     override fun toString(): String {
-        return "Team(id=$id)"
+        return "Team(name='$name', id=$id)"
     }
 }
