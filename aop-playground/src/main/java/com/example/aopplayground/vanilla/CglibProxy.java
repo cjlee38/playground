@@ -1,26 +1,23 @@
 package com.example.aopplayground.vanilla;
 
-import com.example.aopplayground.GreetingService;
-import com.example.aopplayground.HelloService;
-import com.example.aopplayground.MyGreetingService;
+import com.example.aopplayground.ProxyCreator;
+import com.example.aopplayground.target.GreetingService;
+import com.example.aopplayground.target.HelloService;
+import com.example.aopplayground.target.MyGreetingService;
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
-import org.springframework.util.ReflectionUtils;
 
 import java.lang.reflect.Method;
 
-public class CglibProxy {
+public class CglibProxy implements ProxyCreator {
 
-    public static void main(String[] args) {
+    public MyGreetingService createProxy() {
         Enhancer enhancer = new Enhancer();
         enhancer.setCallback(new MyMethodInterceptor(new MyGreetingService()));
+        enhancer.setSuperclass(MyGreetingService.class);
         enhancer.setInterfaces(new Class[]{GreetingService.class, HelloService.class});
-        Object myProxy = enhancer.create();
-        GreetingService greetingService = (GreetingService) myProxy;
-        greetingService.greetings();
-        HelloService helloService = (HelloService) myProxy;
-        helloService.hello();
+        return (MyGreetingService) enhancer.create();
     }
 
     static class MyMethodInterceptor implements MethodInterceptor {

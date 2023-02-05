@@ -1,17 +1,18 @@
 package com.example.aopplayground.vanilla;
 
 
-import com.example.aopplayground.GreetingService;
-import com.example.aopplayground.HelloService;
-import com.example.aopplayground.MyGreetingService;
+import com.example.aopplayground.ProxyCreator;
+import com.example.aopplayground.target.GreetingService;
+import com.example.aopplayground.target.HelloService;
+import com.example.aopplayground.target.MyGreetingService;
 
 import java.lang.reflect.Proxy;
 
-public class JdkProxy {
+public class JdkProxy implements ProxyCreator {
 
-    public static void main(String[] args) {
+    public MyGreetingService createProxy() {
         MyGreetingService service = new MyGreetingService();
-        Object myProxy = Proxy.newProxyInstance(
+        return (MyGreetingService) Proxy.newProxyInstance(
                 MyGreetingService.class.getClassLoader(),
                 new Class[]{GreetingService.class, HelloService.class},
                 (proxy, method, args1) -> {
@@ -21,9 +22,5 @@ public class JdkProxy {
                     return null;
                 }
         );
-        GreetingService greetingService = (GreetingService) myProxy;
-        greetingService.greetings();
-        HelloService helloService = (HelloService) myProxy;
-        helloService.hello();
     }
 }

@@ -1,5 +1,8 @@
-package com.example.aopplayground;
+package com.example.aopplayground.target;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class MyGreetingService implements GreetingService, HelloService {
 
     @Override
