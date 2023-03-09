@@ -10,7 +10,7 @@ class KeepAliveFilter : Filter {
 
     override fun doFilter(request: ServletRequest, response: ServletResponse, chain: FilterChain) {
         val httpResponse: HttpServletResponse = response as HttpServletResponse;
-        httpResponse.setHeader("Connection", "close");
+        httpResponse.setHeader("Connection", "keep-alive");
         chain.doFilter(request, response);
     }
 }
