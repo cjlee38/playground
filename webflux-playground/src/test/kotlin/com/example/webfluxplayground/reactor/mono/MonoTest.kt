@@ -12,6 +12,7 @@ class MonoTest {
         val from = Mono.from(just)
         val defer = Mono.defer { from }
         val empty = Mono.empty<String>()
+        val subscribe = defer.subscribe()
     }
 
     private fun throws() {

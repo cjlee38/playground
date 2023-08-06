@@ -1,15 +1,7 @@
 plugins {
-    id 'org.springframework.boot' version '2.6.6'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.springframework.boot'
+    id 'io.spring.dependency-management'
     id 'java'
-}
-
-group = 'org.example'
-version = '1.0-SNAPSHOT'
-sourceCompatibility = '11'
-
-repositories {
-    mavenCentral()
 }
 
 dependencies {
@@ -36,8 +28,4 @@ dependencies {
 
     runtimeOnly 'mysql:mysql-connector-java'
     runtimeOnly 'com.h2database:h2'
-}
-
-test {
-    useJUnitPlatform()
 }
