@@ -1,0 +1,13 @@
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: "localhost:9092"
+#    streams:
+#      application-id: "kafka-streams-playground"
+    consumer:
+      auto-offset-reset: earliest
+      bootstrap-servers: "localhost:9092"
+      enable-auto-commit: false
+      group-id: "test-group"
+    listener:
+      ack-mode: manual

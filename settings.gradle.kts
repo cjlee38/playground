@@ -1,7 +1,7 @@
 rootProject.name = "playground"
 
-include("spring-playground")
 include("kotlin-playground")
+include("spring-playground")
 include("java-playground")
 include("jpa-playground")
 include("querydsl-playground")
@@ -10,6 +10,7 @@ include("aop-playground")
 include("http-playground")
 include("webflux-playground")
 include("concurrency-playground")
+include("kafka-streams-playground")
 
 pluginManagement {
     val kotlinVersion: String by settings
