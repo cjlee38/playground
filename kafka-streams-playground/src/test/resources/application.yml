@@ -2,8 +2,8 @@ spring:
   kafka:
     producer:
       bootstrap-servers: "localhost:9092"
-#    streams:
-#      application-id: "kafka-streams-playground"
+    streams:
+      application-id: "streams-test"
     consumer:
       auto-offset-reset: earliest
       bootstrap-servers: "localhost:9092"

@@ -16,13 +16,13 @@ import org.springframework.kafka.core.ProducerFactory
 
 @Configuration
 class KafkaConfiguration(
-    @Value("\${spring.kafka.producer.bootstrap-servers}") private val bootstrapServer: String,
+    @Value("\${spring.kafka.producer.bootstrap-servers}") private val bootstrapServers: String,
 ) {
     @Bean
     fun producerFactory(): ProducerFactory<String, String> {
         return DefaultKafkaProducerFactory(
             mapOf(
-                ProducerConfig.BOOTSTRAP_SERVERS_CONFIG to bootstrapServer,
+                ProducerConfig.BOOTSTRAP_SERVERS_CONFIG to bootstrapServers,
                 ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG to StringSerializer::javaClass,
                 ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG to StringSerializer::javaClass,
             ), StringSerializer(), StringSerializer()
@@ -37,7 +37,7 @@ class KafkaConfiguration(
 
 @Configuration
 class KafkaConsumerConfiguration(
-    @Value("\${spring.kafka.consumer.bootstrap-servers}") private val bootstrapServer: String,
+    @Value("\${spring.kafka.consumer.bootstrap-servers}") private val bootstrapServers: String,
     @Value("\${spring.kafka.consumer.auto-offset-reset}") private val autoOffsetReset: String,
     @Value("\${spring.kafka.consumer.enable-auto-commit}") private val enableAutoCommit: Boolean,
 ) {
@@ -45,7 +45,7 @@ class KafkaConsumerConfiguration(
     fun consumerFactory(): ConsumerFactory<String, String> {
         return DefaultKafkaConsumerFactory(
             mapOf(
-                ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG to bootstrapServer,
+                ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG to bootstrapServers,
                 ConsumerConfig.AUTO_OFFSET_RESET_CONFIG to autoOffsetReset,
                 ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG to enableAutoCommit
             ), StringDeserializer(), StringDeserializer()
