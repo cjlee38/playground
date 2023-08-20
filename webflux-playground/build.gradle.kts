@@ -5,6 +5,7 @@ plugins {
     id("io.spring.dependency-management")
     kotlin("jvm")
     kotlin("plugin.spring")
+    kotlin("plugin.jpa")
 }
 
 group = "com.example"
@@ -17,13 +18,22 @@ repositories {
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("io.projectreactor:reactor-test")
-    implementation("io.asyncer:r2dbc-mysql:1.0.2")
+
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    testImplementation("io.projectreactor.tools:blockhound:1.0.8.RELEASE")
+
+//    implementation("io.asyncer:r2dbc-mysql:1.0.2")
+    implementation("io.r2dbc:r2dbc-h2")
+
+    // for apple sillicon
+    implementation("io.netty:netty-resolver-dns-native-macos:4.1.75.Final:osx-aarch_64")
 }
 
 tasks.withType<KotlinCompile> {
