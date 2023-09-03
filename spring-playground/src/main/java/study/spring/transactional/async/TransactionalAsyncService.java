@@ -1,9 +1,5 @@
 package study.spring.transactional.async;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.ThreadPoolExecutor;
 import lombok.SneakyThrows;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,9 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 @Service
-public class AsyncService {
+public class TransactionalAsyncService {
 
-    private static final Logger logger = LoggerFactory.getLogger(AsyncService.class);
+    private static final Logger logger = LoggerFactory.getLogger(TransactionalAsyncService.class);
 
     @SneakyThrows
     @Async

@@ -28,6 +28,7 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     testImplementation("io.projectreactor.tools:blockhound:1.0.8.RELEASE")
+    implementation("io.github.microutils:kotlin-logging:1.7.6")
 
 //    implementation("io.asyncer:r2dbc-mysql:1.0.2")
     implementation("io.r2dbc:r2dbc-h2")

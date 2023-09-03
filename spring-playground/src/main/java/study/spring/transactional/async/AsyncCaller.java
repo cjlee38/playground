@@ -10,12 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class AsyncCaller {
 
-    private final AsyncService asyncService;
+    private final TransactionalAsyncService transactionalAsyncService;
 
     @Transactional
     public String callAsync() {
         for (int i = 0; i < 1000; i++) {
-            asyncService.helloWorld();
+            transactionalAsyncService.helloWorld();
         }
         return "caller";
     }
@@ -23,7 +23,7 @@ public class AsyncCaller {
     public String doOnPool() {
         ExecutorService executorService = Executors.newCachedThreadPool();
         for (int i = 0; i < 1000; i++) {
-            executorService.submit(asyncService::helloWorld);
+            executorService.submit(transactionalAsyncService::helloWorld);
         }
         return "poollllllllll";
     }

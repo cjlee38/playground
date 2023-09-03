@@ -8,8 +8,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @SpringBootApplication
 @EnableJpaRepositories
 @EnableScheduling
-public class Main {
+public class SpringPlaygroundApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Main.class, args);
+        SpringApplication.run(SpringPlaygroundApplication.class, args);
     }
 }

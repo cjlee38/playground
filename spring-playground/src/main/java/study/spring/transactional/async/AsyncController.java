@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class AsyncController {
 
     private final AsyncCaller caller;
-    private final AsyncService service;
+    private final TransactionalAsyncService service;
 
     @GetMapping("/async/run")
     public void runAsync() {
