@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+java {
+    sourceCompatibility = '21'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}

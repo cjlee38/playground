@@ -11,6 +11,7 @@ include("http-playground")
 include("webflux-playground")
 include("concurrency-playground")
 include("kafka-streams-playground")
+include("java-advanced-playground")
 
 pluginManagement {
     val kotlinVersion: String by settings
