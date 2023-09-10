@@ -1,5 +1,7 @@
-package com.example.kafkastreamsplayground.streams
+package com.example.kafkastreamsplayground.init00.streams
 
+import com.example.kafkastreamsplayground.init00.streams.KafkaStreamsConsumer
+import com.example.kafkastreamsplayground.init00.streams.KafkaStreamsProducer
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.kafka.test.context.EmbeddedKafka

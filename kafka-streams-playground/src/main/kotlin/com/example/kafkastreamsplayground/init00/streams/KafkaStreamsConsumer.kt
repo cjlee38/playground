@@ -1,4 +1,4 @@
-package com.example.kafkastreamsplayground.streams
+package com.example.kafkastreamsplayground.init00.streams
 
 import org.springframework.kafka.annotation.KafkaListener
 import org.springframework.kafka.support.Acknowledgment

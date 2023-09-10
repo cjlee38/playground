@@ -1,4 +1,4 @@
-package com.example.kafkastreamsplayground.fakes
+package com.example.kafkastreamsplayground.init00.fakes
 
 import org.springframework.kafka.core.KafkaTemplate
 import org.springframework.stereotype.Component

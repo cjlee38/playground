@@ -1,5 +1,7 @@
-package com.example.kafkastreamsplayground.fakes
+package com.example.kafkastreamsplayground.init00.fakes
 
+import com.example.kafkastreamsplayground.init00.fakes.KafkaConsumer
+import com.example.kafkastreamsplayground.init00.fakes.KafkaProducer
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

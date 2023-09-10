@@ -1,4 +1,4 @@
-package com.example.kafkastreamsplayground.fakes
+package com.example.kafkastreamsplayground.init00.fakes
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.kafka.annotation.KafkaListener

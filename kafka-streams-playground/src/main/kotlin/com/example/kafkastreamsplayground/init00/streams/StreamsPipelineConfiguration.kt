@@ -1,9 +1,8 @@
-package com.example.kafkastreamsplayground.streams
+package com.example.kafkastreamsplayground.init00.streams
 
 import mu.KLogging
 import org.apache.kafka.common.serialization.Serdes
 import org.apache.kafka.streams.KafkaStreams
-import org.apache.kafka.streams.KeyValue
 import org.apache.kafka.streams.StreamsBuilder
 import org.apache.kafka.streams.StreamsConfig
 import org.springframework.beans.factory.annotation.Value
@@ -15,7 +14,6 @@ import java.util.*
 class StreamsPipelineConfiguration(
     @Value("\${spring.kafka.producer.bootstrap-servers}") private val bootstrapServers: String,
     @Value("\${spring.kafka.streams.application-id}") private val applicationId: String,
-    private val kafkaStreamsProducer: KafkaStreamsProducer,
 ) {
     companion object : KLogging()
 

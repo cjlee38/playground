@@ -41,3 +41,4 @@ out/
 **/out/*
 **/.idea/*
 /jpa-playground/cglib/
+/infrastructure/kafka/kafka_2.13-3.5.0/

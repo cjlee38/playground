@@ -1,4 +1,4 @@
-package study.spring.tomcat;
+package study.spring.async;
 
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;

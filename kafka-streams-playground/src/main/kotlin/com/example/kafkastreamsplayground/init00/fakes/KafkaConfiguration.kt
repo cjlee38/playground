@@ -1,4 +1,4 @@
-package com.example.kafkastreamsplayground.fakes
+package com.example.kafkastreamsplayground.init00.fakes
 
 import org.apache.kafka.clients.consumer.ConsumerConfig
 import org.apache.kafka.clients.producer.ProducerConfig
