@@ -9,12 +9,13 @@ import org.springframework.web.bind.annotation.RestController
 class RemoteController {
     @GetMapping("/users/{id}")
     fun user(@PathVariable id: Long): ResponseEntity<String> {
-        Thread.sleep(10)
+        Thread.sleep(1000L)
         return ResponseEntity.ok("user : $id")
     }
 
     @GetMapping("/items/{id}")
     fun item(@PathVariable id: Long): ResponseEntity<String> {
+        Thread.sleep(2000L)
         return ResponseEntity.ok("item : $id")
     }
 }
