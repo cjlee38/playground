@@ -31,6 +31,10 @@ dependencies {
     testImplementation("io.kotest:kotest-runner-junit5:5.4.2")
     testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.2")
     runtimeOnly("com.h2database:h2")
+
+    // rate-limiter
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+    implementation("com.google.guava:guava:32.1.2-jre")
 }
 
 tasks {
