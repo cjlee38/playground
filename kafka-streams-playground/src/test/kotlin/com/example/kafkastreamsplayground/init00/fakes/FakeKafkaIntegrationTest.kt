@@ -1,8 +1,5 @@
 package com.example.kafkastreamsplayground.init00.fakes
 
-import com.example.kafkastreamsplayground.init00.fakes.KafkaConsumer
-import com.example.kafkastreamsplayground.init00.fakes.KafkaProducer
-import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.kafka.test.context.EmbeddedKafka
@@ -14,7 +11,6 @@ import org.springframework.test.context.TestConstructor
 class FakeKafkaIntegrationTest(
     private val kafkaProducer: KafkaProducer,
     private val kafkaConsumer: KafkaConsumer,
-    private val objectMapper: ObjectMapper,
 ) {
     @Test
     fun test() {

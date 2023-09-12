@@ -15,15 +15,22 @@ class KafkaConsumer(
         get() = _events.toList()
 
     @KafkaListener(topics = ["test-topic"], groupId = "test-group")
-    fun consume(@Payload payload: String, acknowledgment: Acknowledgment) {
-        println("event = $payload")
+    fun consumeGroup(@Payload payload: String, acknowledgment: Acknowledgment) {
+        println("event = $payload by `consumeGroup`")
         _events.add(payload)
         acknowledgment.acknowledge()
     }
 
     @KafkaListener(topics = ["test-topic"], groupId = "test-group")
-    fun consume2(@Payload payload: String, acknowledgment: Acknowledgment) {
-        println("event = $payload")
+    fun consumeSameGroup(@Payload payload: String, acknowledgment: Acknowledgment) {
+        println("event = $payload by `consumeSameGroup`")
+        _events.add(payload)
+        acknowledgment.acknowledge()
+    }
+
+    @KafkaListener(topics = ["test-topic"], groupId = "test-group2")
+    fun consumeDifferentGroup(@Payload payload: String, acknowledgment: Acknowledgment) {
+        println("event = $payload by `consumeDifferentGroup`")
         _events.add(payload)
         acknowledgment.acknowledge()
     }
