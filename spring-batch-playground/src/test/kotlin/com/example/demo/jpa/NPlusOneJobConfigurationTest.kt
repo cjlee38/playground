@@ -1,4 +1,4 @@
-package com.example.demo.job
+package com.example.demo.jpa
 
 import com.example.demo.domain.Member
 import com.example.demo.domain.Team
@@ -21,7 +21,7 @@ import org.springframework.test.context.TestPropertySource
 @EnableAutoConfiguration
 @TestPropertySource(properties = ["job.name=nPlusOneJob"])
 @TestConstructor(autowireMode = TestConstructor.AutowireMode.ALL)
-class NPlusOneConfigurationTest(
+class NPlusOneJobConfigurationTest(
     private val launcher: JobLauncherTestUtils,
     private val teamRepository: TeamRepository,
 ) {

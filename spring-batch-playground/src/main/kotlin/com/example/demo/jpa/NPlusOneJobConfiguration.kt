@@ -1,4 +1,4 @@
-package com.example.demo.job
+package com.example.demo.jpa
 
 import com.example.demo.CHUNK_SIZE
 import com.example.demo.domain.Member
@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Configuration
 import javax.persistence.EntityManagerFactory
 
 @Configuration
-class NPlusOneConfiguration(
+class NPlusOneJobConfiguration(
     private val jobBuilderFactory: JobBuilderFactory,
     private val stepBuilderFactory: StepBuilderFactory,
     private val entityManagerFactory: EntityManagerFactory
