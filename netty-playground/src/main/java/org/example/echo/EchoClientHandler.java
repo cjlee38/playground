@@ -16,17 +16,18 @@ public class EchoClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
     private static final Logger logger = LoggerFactory.getLogger(EchoClientHandler.class);
 
     @Override
-    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+    public void channelActive(ChannelHandlerContext ctx) {
         ctx.writeAndFlush(Unpooled.copiedBuffer("Netty rocks !", Charset.defaultCharset()));
     }
 
     @Override
-    protected void channelRead0(ChannelHandlerContext ctx, ByteBuf msg) throws Exception {
+    protected void channelRead0(ChannelHandlerContext ctx, ByteBuf msg) {
+        // msg not guaranteed to be fully accomplished
         logger.info("Client Received : " + msg.toString(CharsetUtil.UTF_8));
     }
 
     @Override
-    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         cause.printStackTrace();
         ctx.close();
     }
