@@ -14,6 +14,7 @@ include("webflux-playground:remote-server")
 include("concurrency-playground")
 include("kafka-streams-playground")
 include("java-advanced-playground")
+include("netty-playground")
 
 pluginManagement {
     val kotlinVersion: String by settings
@@ -88,3 +89,4 @@ dependencyResolutionManagement {
         }
     }
 }
+
