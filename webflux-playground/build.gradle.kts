@@ -34,7 +34,7 @@ dependencies {
 
     /* tests */
     testImplementation("io.kotest:kotest-runner-junit5:5.4.2")
-    testImplementation("io.projectreactor:reactor-test")
+    implementation("io.projectreactor:reactor-test")
     testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.2")
     testImplementation("io.projectreactor.tools:blockhound:1.0.8.RELEASE")
 

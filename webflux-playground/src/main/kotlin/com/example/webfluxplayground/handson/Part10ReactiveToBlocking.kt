@@ -1,6 +1,7 @@
 package com.example.webfluxplayground.handson
 
-import io.pivotal.literx.domain.User
+import com.example.webfluxplayground.handson.domain.User
+import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 
 /**
@@ -9,15 +10,13 @@ import reactor.core.publisher.Mono
  * @author Sebastien Deleuze
  */
 class Part10ReactiveToBlocking {
-    //========================================================================================
     // TODO Return the user contained in that Mono
-    fun monoToValue(mono: Mono<User?>?): User? {
-        return null
+    fun monoToValue(mono: Mono<User>): User {
+        return mono.block() ?: throw IllegalArgumentException()
     }
 
-    //========================================================================================
     // TODO Return the users contained in that Flux
-    fun fluxToValues(flux: Flux<User?>?): Iterable<User>? {
-        return null
+    fun fluxToValues(flux: Flux<User>): Iterable<User> {
+        return flux.toIterable()
     }
 }
