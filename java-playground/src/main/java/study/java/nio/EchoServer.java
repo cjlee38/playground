@@ -45,24 +45,24 @@ public class EchoServer {
     private static void answerWithEcho(ByteBuffer buffer, SelectionKey key)
             throws IOException {
 
-        SocketChannel client = (SocketChannel) key.channel();
-        client.read(buffer);
+        SocketChannel socketChannel = (SocketChannel) key.channel();
+        socketChannel.read(buffer);
         if (new String(buffer.array()).trim().equals(EXIT)) {
-            client.close();
+            socketChannel.close();
             System.out.println("Not accepting client messages anymore");
         }
 
         buffer.flip();
-        client.write(buffer);
+        socketChannel.write(buffer);
         buffer.clear();
     }
 
     private static void register(Selector selector, ServerSocketChannel serverSocket)
             throws IOException {
 
-        SocketChannel client = serverSocket.accept();
-        client.configureBlocking(false);
-        client.register(selector, SelectionKey.OP_READ);
+        SocketChannel socketChannel = serverSocket.accept();
+        socketChannel.configureBlocking(false);
+        socketChannel.register(selector, SelectionKey.OP_READ);
         System.out.println("new client connected...");
     }
 }
