@@ -1,15 +1,21 @@
 plugins {
     id 'java'
+    id 'idea'
 }
 
 java {
-    sourceCompatibility = '21'
-    targetCompatibility = '21'
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
+idea {
+    module {
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
+        setJdkName('21')
+    }
 }

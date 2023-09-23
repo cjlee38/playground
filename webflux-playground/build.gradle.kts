@@ -41,10 +41,3 @@ dependencies {
     // for apple sillicon
     implementation("io.netty:netty-resolver-dns-native-macos:4.1.75.Final:osx-aarch_64")
 }
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "11"
-    }
-}
