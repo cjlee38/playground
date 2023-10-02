@@ -1,4 +1,4 @@
-package study.syntax.operator;
+package syntax.operator;
 
 public class JavaOperator {
 

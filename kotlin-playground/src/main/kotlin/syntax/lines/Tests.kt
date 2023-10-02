@@ -1,4 +1,4 @@
-package study.syntax.lines
+package syntax.lines
 
 fun main() {
     execute(

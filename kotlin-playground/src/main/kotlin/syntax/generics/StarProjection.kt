@@ -1,4 +1,4 @@
-package study.syntax.generics
+package syntax.generics
 
 fun main() {
     val strings = listOf("hello", "world")

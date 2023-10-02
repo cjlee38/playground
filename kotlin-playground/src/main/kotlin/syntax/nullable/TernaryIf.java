@@ -1,4 +1,4 @@
-package study.syntax.nullable;
+package syntax.nullable;
 
 public class TernaryIf {
     public static void main(String[] args) {

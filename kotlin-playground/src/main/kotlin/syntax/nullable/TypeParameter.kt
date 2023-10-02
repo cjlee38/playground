@@ -1,4 +1,4 @@
-package study.syntax.nullable
+package syntax.nullable
 
 fun <T> printHashCode(t: T) {
     // t에서 null을 받을 수 있다.

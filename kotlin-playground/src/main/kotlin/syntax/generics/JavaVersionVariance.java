@@ -1,4 +1,4 @@
-package study.syntax.generics;
+package syntax.generics;
 
 import java.util.List;
 

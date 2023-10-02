@@ -1,4 +1,4 @@
-package study.syntax.receiver
+package syntax.receiver
 
 import java.util.function.IntSupplier
 import java.util.function.Supplier

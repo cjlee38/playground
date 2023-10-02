@@ -1,4 +1,4 @@
-package study.syntax.wrappertype
+package syntax.wrappertype
 
 import java.util.HashSet
 

@@ -1,4 +1,4 @@
-package study.syntax.lambda
+package syntax.lambda
 
 fun main() {
     val strings = listOf("a")

@@ -1,4 +1,4 @@
-package study.syntax.lambda;
+package syntax.lambda;
 
 import java.util.ArrayList;
 import java.util.List;
