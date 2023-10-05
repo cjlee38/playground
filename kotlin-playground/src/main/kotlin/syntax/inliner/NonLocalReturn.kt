@@ -1,4 +1,4 @@
-package study.syntax.inliner
+package syntax.inliner
 
 
 inline fun <T> List<T>.method(lambda: (T) -> Unit) {

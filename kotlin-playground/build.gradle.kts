@@ -37,20 +37,3 @@ dependencies {
     implementation("com.google.guava:guava:32.1.2-jre")
 }
 
-tasks {
-    withType<Test> {
-        useJUnitPlatform()
-    }
-
-    test {
-        useJUnitPlatform()
-    }
-
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-}
-

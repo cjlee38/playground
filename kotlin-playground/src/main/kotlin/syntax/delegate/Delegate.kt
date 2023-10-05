@@ -1,4 +1,4 @@
-package study.syntax.delegate
+package syntax.delegate
 
 import kotlin.properties.Delegates
 import kotlin.reflect.KProperty

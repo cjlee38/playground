@@ -1,4 +1,4 @@
-package study.syntax.wrappertype;
+package syntax.wrappertype;
 
 public class ImplicitConversion {
     public static void main(String[] args) {

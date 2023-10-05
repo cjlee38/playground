@@ -1,4 +1,4 @@
-package study.syntax.nullable
+package syntax.nullable
 
 fun String?.isMyNullOrBlank(): Boolean = this == null || this.isBlank()
 

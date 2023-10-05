@@ -1,4 +1,4 @@
-package study.syntax.lateinitialize
+package syntax.lateinitialize
 
 class ConditionCheck {
     lateinit var nonPrimitive: Class

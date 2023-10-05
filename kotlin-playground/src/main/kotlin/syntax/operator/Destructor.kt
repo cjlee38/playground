@@ -1,4 +1,4 @@
-package study.syntax.operator
+package syntax.operator
 
 fun main() {
     val array = arrayOf(1, 2, 3, 4, 5, 6)

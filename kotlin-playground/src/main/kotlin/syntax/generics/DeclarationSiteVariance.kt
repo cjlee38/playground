@@ -1,4 +1,4 @@
-package study.syntax.generics
+package syntax.generics
 
 open class Parent(val id: Long)
 

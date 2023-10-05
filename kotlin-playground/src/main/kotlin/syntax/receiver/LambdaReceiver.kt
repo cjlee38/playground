@@ -1,4 +1,4 @@
-package study.syntax.receiver
+package syntax.receiver
 
 fun String.lastChar(): Char {
     return get(this.length - 1)

@@ -1,4 +1,4 @@
-package study.syntax.wrappertype
+package syntax.wrappertype
 
 fun main() {
     val a = 42;

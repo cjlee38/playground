@@ -1,4 +1,4 @@
-package study.syntax.receiver
+package syntax.receiver
 
 fun main() {
     var age = 5

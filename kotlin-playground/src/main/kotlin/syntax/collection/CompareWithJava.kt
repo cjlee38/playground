@@ -1,4 +1,4 @@
-package study.syntax.collection
+package syntax.collection
 
 import java.util.HashSet as JavaHashSet
 import kotlin.collections.HashSet as KtHashSet

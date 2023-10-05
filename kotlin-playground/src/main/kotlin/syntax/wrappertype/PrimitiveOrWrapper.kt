@@ -1,4 +1,4 @@
-package study.syntax.wrappertype
+package syntax.wrappertype
 
 
 // convert this to java

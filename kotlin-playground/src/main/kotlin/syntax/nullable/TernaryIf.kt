@@ -1,4 +1,4 @@
-package study.syntax.nullable
+package syntax.nullable
 
 fun main() {
     val str: String? = null

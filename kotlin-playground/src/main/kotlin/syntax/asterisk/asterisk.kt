@@ -1,4 +1,4 @@
-package study.syntax.asterisk
+package syntax.asterisk
 
 
 

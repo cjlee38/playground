@@ -1,4 +1,4 @@
-package study.syntax.operator
+package syntax.operator
 
 data class KtOperator(val v: Int) {
 

@@ -1,4 +1,4 @@
-package study.syntax.generics
+package syntax.generics
 
 fun<T> ensureTrailingPeriod(seq: T) where T: CharSequence, T : Appendable {
     if (!seq.endsWith('.')) {
