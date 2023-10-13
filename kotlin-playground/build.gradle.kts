@@ -1,4 +1,5 @@
 plugins {
+    // todo : delete spring dependency
     id("org.springframework.boot")
     id("io.spring.dependency-management")
 

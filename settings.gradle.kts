@@ -15,6 +15,7 @@ include("concurrency-playground")
 include("kafka-streams-playground")
 include("java-advanced-playground")
 include("netty-playground")
+include("utils")
 
 pluginManagement {
     val kotlinVersion: String by settings
@@ -89,4 +90,3 @@ dependencyResolutionManagement {
         }
     }
 }
-
