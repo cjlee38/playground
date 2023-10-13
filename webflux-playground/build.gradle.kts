@@ -17,6 +17,7 @@ repositories {
 }
 
 dependencies {
+    implementation(project(":utils"))
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -27,6 +28,8 @@ dependencies {
 
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
+    implementation("org.springframework.kafka:spring-kafka")
+    implementation("io.projectreactor.kafka:reactor-kafka")
     implementation("io.r2dbc:r2dbc-h2")
 //    implementation("io.asyncer:r2dbc-mysql:1.0.2")
 
@@ -37,6 +40,7 @@ dependencies {
     implementation("io.projectreactor:reactor-test")
     testImplementation("io.kotest.extensions:kotest-extensions-spring:1.1.2")
     testImplementation("io.projectreactor.tools:blockhound:1.0.8.RELEASE")
+    testImplementation("org.springframework.kafka:spring-kafka-test")
 
     // for apple sillicon
     implementation("io.netty:netty-resolver-dns-native-macos:4.1.75.Final:osx-aarch_64")

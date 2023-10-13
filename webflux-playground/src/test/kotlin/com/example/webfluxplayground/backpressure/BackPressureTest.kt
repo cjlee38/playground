@@ -11,6 +11,7 @@ class BackPressureTest {
         val publisher = Flux.interval(Duration.ofMillis(100))
 
         publisher.buffer(Duration.ofMillis(1000))
+            .map {  }
             .subscribe { println("it = ${it}") }
         Thread.sleep(100000)
     }

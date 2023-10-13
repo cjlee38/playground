@@ -6,6 +6,18 @@ spring:
     url: r2dbc:h2:mem:///test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     username: sa
     password:
+  kafka:
+    producer:
+      bootstrap-servers: "localhost:9092"
+    streams:
+      application-id: "streams-test"
+    consumer:
+      auto-offset-reset: earliest
+      bootstrap-servers: "localhost:9092"
+      enable-auto-commit: false
+      group-id: "test-group"
+    listener:
+      ack-mode: manual
 
 logging:
   level:
