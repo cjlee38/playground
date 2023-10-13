@@ -1,0 +1,3 @@
+- [reactor-kafka](https://godekdls.github.io/Reactor%20Kafka/whatsnewinreactorkafka120release/#631-subscribing-to-wildcard-patterns)
+- [official doc](https://projectreactor.io/docs/kafka/release/reference/)
+- [sample-codes](https://github.com/reactor/reactor-kafka/blob/main/reactor-kafka-samples/src/test/java/reactor/kafka/samples/SampleScenariosTest.java)
