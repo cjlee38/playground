@@ -15,6 +15,7 @@ include("concurrency-playground")
 include("kafka-streams-playground")
 include("java-advanced-playground")
 include("netty-playground")
+include("reactor-playground")
 include("utils")
 
 pluginManagement {
